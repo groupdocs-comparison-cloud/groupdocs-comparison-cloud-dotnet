@@ -64,7 +64,6 @@ All GroupDocs.Comparison for Cloud SDKs are licensed under [MIT License](LICENSE
 + [**Product Home**](https://products.groupdocs.cloud/comparison/cloud)
 + [**Documentation**](https://docs.groupdocs.cloud/display/comparisoncloud/Home)
 + [**Free Support Forum**](https://forum.groupdocs.cloud/c/comparison)
-+ [**Paid Support Helpdesk**](https://helpdesk.groupdocs.cloud)
 + [**Blog**](https://blog.groupdocs.cloud/category/groupdocs-products/groupdocs-comparison-product-family)
 
 ## Contact Us
