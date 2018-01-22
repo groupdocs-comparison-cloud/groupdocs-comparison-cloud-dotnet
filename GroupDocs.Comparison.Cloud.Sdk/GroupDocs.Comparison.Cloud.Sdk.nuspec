@@ -1,39 +1,74 @@
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
-        <id>$id$</id>
-        <title>Swagger Library</title>
-
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>$version$</version>
-
-        <!-- Authors contain text that appears directly on the gallery -->
-        <authors>$author$</authors>
-
-        <!-- Owners are typically nuget.org identities that allow gallery
-             users to earily find other packages by the same owners.  -->
-        <owners>$author$</owners>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <developmentDependency>false</developmentDependency>
-
-        <!-- The description can be used in package manager UI. Note that the
-             nuget.org gallery uses information you add in the portal. -->
-        <description>A library generated from a Swagger doc</description>
-
-        <!-- Dependencies are automatically installed when the package is installed -->
-        <dependencies>
-
-            <dependency id="NewtonSoft.Json" version="10.0.3" />
-            <dependency id="RestSharp" version="105.1.0" />
-
-        </dependencies>
-    </metadata>
-    <files>
-
-        <!-- A readme.txt will be displayed when the package is installed -->
-        <file src="..\..\README.md" target="" />
-        <file src="..\..\docs\**\*.*" target="docs" />
-
-    </files>
+<package>
+  <metadata>
+    <id>GroupDocs.Comparison-Cloud</id>
+    <version>17.12.0</version>
+    <title>GroupDocs.Comparison Cloud SDK for .NET</title>
+    <authors>GroupDocs</authors>
+    <owners>GroupDocs</owners>
+    <licenseUrl>https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet</projectUrl>
+    <iconUrl>https://www.groupdocs.cloud/templates/groupdocs/images/product-logos/groupdocs-comparison-cloud.png</iconUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+    Compare files in Any Platform
+    Generate a difference summary report by comparing two versions of same document with the ability to merge the changes, using our native cloud APIs.   
+    </description>
+    <releaseNotes>
+    GroupDocs.Comparison for Cloud is a REST API for comparison of documents with different formats and manipulate with changes in the cloud.
+    Comparison.Words supports:
+        * doc
+        * docm
+        * docx
+        * dot
+        * dotm
+        * dotx
+        * rtf
+        * odt
+        * ott
+    
+    Comparison.Cells supports: 
+        * xls
+        * xlsx
+        * xlsb
+        * xlsm
+        * csv
+        * ods
+        * xls2003
+        
+    Comparison.Slides supports:
+        * ppt
+        * pptx
+        * pps
+        * ppsx
+        * odp
+        * otp
+    
+    Comparison.Pdf supports:  
+        * pdf
+    
+    Comparison.Html supports: 
+        * htm
+        * html
+        
+    Comparison.Imaging supports:
+        * djvu
+        * dcom
+    
+    Comparison.Email supports:
+        * eml
+        * emlx
+        * msg
+        * mhtml
+    
+    Comparison.Text supports:
+        * txt
+        * other text formats with different extensions
+    </releaseNotes>    
+    <copyright>Aspose 2001-2018. All Rights Reserved.</copyright>
+    <tags>Compare Comparison Documents PDF Word Excel PowerPoint Visio AutoCad DOC DOCX XLS XLSX PPT PPTX VSD DXF TIFF</tags>    
+	<dependencies>
+      <dependency id="Newtonsoft.Json" version="10.0.3" />
+    </dependencies>
+  </metadata>
 </package>
