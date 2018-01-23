@@ -16,8 +16,9 @@ OpenAPI spec version: 1.0
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GroupDocs.Comparison.Cloud.Sdk</RootNamespace>
     <AssemblyName>GroupDocs.Comparison.Cloud.Sdk</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,35 +36,28 @@ OpenAPI spec version: 1.0
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\GroupDocs.Comparison.Cloud.Sdk.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net20\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <HintPath Condition="Exists('..\packages')">..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <HintPath Condition="Exists('..\..\packages')">..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ChangesApi.cs" />
     <Compile Include="Api\ComparisonApi.cs" />
-    <Compile Include="Client\ApiClient.cs" />
-    <Compile Include="Client\ApiException.cs" />
-    <Compile Include="Client\ApiResponse.cs" />
-    <Compile Include="Client\Configuration.cs" />
-    <Compile Include="Client\ExceptionFactory.cs" />
-    <Compile Include="Client\GlobalConfiguration.cs" />
-    <Compile Include="Client\IApiAccessor.cs" />
-    <Compile Include="Client\IReadableConfiguration.cs" />
-    <Compile Include="Client\SwaggerDateConverter.cs" />
     <Compile Include="Internal\ApiInvoker.cs" />
     <Compile Include="Internal\FileInfo.cs" />
     <Compile Include="Internal\IRequestHandler.cs" />

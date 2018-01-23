@@ -99,7 +99,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
         [Test]
         public void PostCategoriesChangesTest()
         {
-            PostCategoriesChangesRequest request = new PostCategoriesChangesRequest(GetComparisonRequest("source.docx", new List<string> { "target.docx" }));
+            PostCategoriesChangesRequest request = new PostCategoriesChangesRequest(GetComparisonRequest("source.docx", new List<string> { "target.docx" }), "ByNodeType");
             var response = ChangesApi.PostCategoriesChanges(request);
             Assert.IsInstanceOf<List<ComparisonChangesCategoryDto>>(response, "response is List<ComparisonChangesCategoryDto>");
         }

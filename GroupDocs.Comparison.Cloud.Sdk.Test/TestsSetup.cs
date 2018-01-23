@@ -86,7 +86,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test
             if (workingDir == null)
                 workingDir = Directory.GetCurrentDirectory();
 
-            var baseDir = Path.Combine(workingDir, "..\\..\\..\\..\\..", "TestData");
+            var baseDir = Path.Combine(workingDir, "..\\..", "Resources\\TestData");
 
             return Path.GetFullPath(baseDir);
         }
