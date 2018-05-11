@@ -9,7 +9,7 @@ The complete source code is available in this repository folder, you can either 
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json)
 - [StyleCop.MSBuild](https://www.nuget.org/packages/StyleCop.MSBuild)
 
-NOTE: The DLLs included in the package may not be the latest version. We recommended using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
+NOTE: The DLLs included in the package may not be the latest version. We recommned using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
 ```
 Install-Package Newtonsoft.Json
 Install-Package StyleCop.MSBuild
@@ -64,8 +64,7 @@ All GroupDocs.Comparison for Cloud SDKs are licensed under [MIT License](LICENSE
 + [**Product Home**](https://products.groupdocs.cloud/comparison/cloud)
 + [**Documentation**](https://docs.groupdocs.cloud/display/comparisoncloud/Home)
 + [**Free Support Forum**](https://forum.groupdocs.cloud/c/comparison)
-+ [**Blog**](https://blog.groupdocs.cloud/category/groupdocs-comparison-cloud-product-family/)
-	     
++ [**Blog**](https://blog.groupdocs.cloud/category/groupdocs-products/groupdocs-comparison-product-family)
 
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/comparison).

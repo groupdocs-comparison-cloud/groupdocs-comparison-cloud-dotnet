@@ -94,6 +94,7 @@ OpenAPI spec version: 1.0
     <Compile Include="Model\Responses\FileExist.cs" />
     <Compile Include="Model\Responses\FileExistResponse.cs" />
     <Compile Include="Model\Responses\ResponseMessage.cs" />
+    <Compile Include="Model\Responses\ResponseWrapper.cs" />
     <Compile Include="Model\StyleSettingsValues.cs" />
     <Compile Include="Model\ValueType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

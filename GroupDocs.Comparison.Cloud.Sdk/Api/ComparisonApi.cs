@@ -23,6 +23,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using GroupDocs.Comparison.Cloud.Sdk.Model.Responses;
+
 namespace GroupDocs.Comparison.Cloud.Sdk.Api
 {
     using System.Collections.Generic;
@@ -116,8 +118,8 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
         /// Returns images of document with the result of comparison 
         /// </summary>
         /// <param name="request">Request. <see cref="ComparisonImagesRequest" /></param> 
-        /// <returns><see cref="List<Link>"/></returns>            
-        public List<Link> ComparisonImages(ComparisonImagesRequest request)
+        /// <returns><see cref="ResponseWrapper"/></returns>            
+        public ResponseWrapper ComparisonImages(ComparisonImagesRequest request)
         {
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/comparison/compareDocuments/images";
@@ -137,7 +139,8 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
                     null);
                 if (response != null)
                 {
-                    return (List<Link>)SerializationHelper.Deserialize(response, typeof(List<Link>));
+                    var result = (List<Link>)SerializationHelper.Deserialize(response, typeof(List<Link>));
+                    return new ResponseWrapper(){ResponeList = result};
                 }
                     
                 return null;

@@ -14,10 +14,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-using RestSharp;
 using NUnit.Framework; 
 using GroupDocs.Comparison.Cloud.Sdk.Model;
 using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Responses;
 using ComparisonRequest = GroupDocs.Comparison.Cloud.Sdk.Model.Requests.ComparisonRequest;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
@@ -119,7 +119,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
             string outPath = "result.docx";
             ComparisonImagesRequest request = new ComparisonImagesRequest(GetComparisonRequest("source.docx", new List<string> { "target.docx" }), outPath);
             var response = ComparisonApi.ComparisonImages(request);
-            Assert.IsInstanceOf<List<Link>>(response, "response is List<Link>");
+            Assert.IsInstanceOf<ResponseWrapper>(response, "response is ResponseWrapper");
         }
 
         /// <summary>
