@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D7396D8-9015-4098-9356-77D6ADD69139}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GroupDocs.Comparison.Cloud.Sdk</RootNamespace>
+    <AssemblyName>GroupDocs.Comparison.Cloud.Sdk</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\CompareApi.cs" />
+    <Compile Include="Api\FileApi.cs" />
+    <Compile Include="Api\FolderApi.cs" />
+    <Compile Include="Api\InfoApi.cs" />
+    <Compile Include="Api\StorageApi.cs" />
+    <Compile Include="Client\ApiException.cs" />
+    <Compile Include="Client\ApiInvoker.cs" />
+    <Compile Include="Client\Configuration.cs" />
+    <Compile Include="Client\FileInfo.cs" />
+    <Compile Include="Client\IRequestHandler.cs" />
+    <Compile Include="Client\NeedRepeatRequestException.cs" />
+    <Compile Include="Client\RequestHandlers\ApiErrorResponse.cs" />
+    <Compile Include="Client\RequestHandlers\ApiExceptionRequestHandler.cs" />
+    <Compile Include="Client\RequestHandlers\AuthErrorResponse.cs" />
+    <Compile Include="Client\RequestHandlers\AuthRequestHandler.cs" />
+    <Compile Include="Client\RequestHandlers\DebugLogRequestHandler.cs" />
+    <Compile Include="Client\RequestHandlers\Error.cs" />
+    <Compile Include="Client\SerializationHelper.cs" />
+    <Compile Include="Client\StreamHelper.cs" />
+    <Compile Include="Client\UrlHelper.cs" />
+    <Compile Include="Model\ChangeInfo.cs" />
+    <Compile Include="Model\DiagramMasterSetting.cs" />
+    <Compile Include="Model\DiscUsage.cs" />
+    <Compile Include="Model\Error.cs" />
+    <Compile Include="Model\ErrorDetails.cs" />
+    <Compile Include="Model\FileInfo.cs" />
+    <Compile Include="Model\FilesList.cs" />
+    <Compile Include="Model\FilesUploadResult.cs" />
+    <Compile Include="Model\FileVersion.cs" />
+    <Compile Include="Model\FileVersions.cs" />
+    <Compile Include="Model\Format.cs" />
+    <Compile Include="Model\FormatsResult.cs" />
+    <Compile Include="Model\ItemsStyle.cs" />
+    <Compile Include="Model\Link.cs" />
+    <Compile Include="Model\Metadata.cs" />
+    <Compile Include="Model\ObjectExist.cs" />
+    <Compile Include="Model\Options.cs" />
+    <Compile Include="Model\OriginalSize.cs" />
+    <Compile Include="Model\Settings.cs" />
+    <Compile Include="Model\StorageExist.cs" />
+    <Compile Include="Model\StorageFile.cs" />
+    <Compile Include="Model\StyleChangeInfo.cs" />
+    <Compile Include="Model\UpdatesOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
