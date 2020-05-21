@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -139,9 +139,9 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
             return Path.GetFullPath(baseDir);
         }
 
-        protected Options GetComparisonOptions(TestFile sourceFile, List<TestFile> targetFiles)
+        protected ComparisonOptions GetComparisonOptions(TestFile sourceFile, List<TestFile> targetFiles)
         {
-            var options = new Options()
+            var options = new ComparisonOptions
             {
                 SourceFile = sourceFile.ToFileInfo(),
                 OutputPath = "/resultFilePath/" + sourceFile.FileName,
@@ -152,13 +152,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
                     StyleChangeDetection = true,
                     UseFramesForDelInsElements = false,
                     MetaData = null,
-                    DetailLevel = "Low",
+                    DetailsLevel = Settings.DetailsLevelEnum.Low,
                     DiagramMasterSetting = null,
                     CalculateComponentCoordinates = false,
-                    CloneMetadata = "Default",
-                    MarkDeletedInsertedContentDeep = false,
+                    CloneMetadata = Settings.CloneMetadataEnum.Default,
                     Password = "1111",
-                    PasswordSaveOption = "User",
+                    PasswordSaveOption = Settings.PasswordSaveOptionEnum.User,
                     DeletedItemsStyle = new ItemsStyle
                     {
                         BeginSeparatorString = "",
@@ -179,7 +178,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
                         Italic = false,
                         StrikeThrough = false
                     },
-                    StyleChangedItemsStyle = new ItemsStyle
+                    ChangedItemsStyle = new ItemsStyle
                     {
                         BeginSeparatorString = "",
                         EndSeparatorString = "",
@@ -203,7 +202,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
 
         protected UpdatesOptions GetComparisonOptionsUpdates(TestFile sourceFile, List<TestFile> targetFiles)
         {
-            var options = new UpdatesOptions()
+            var options = new UpdatesOptions
             {
                 SourceFile = sourceFile.ToFileInfo(),
                 OutputPath = "/resultFilePath/" + sourceFile.FileName,
@@ -214,13 +213,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
                     StyleChangeDetection = true,
                     UseFramesForDelInsElements = false,
                     MetaData = null,
-                    DetailLevel = "Low",
+                    DetailsLevel = Settings.DetailsLevelEnum.Low,
                     DiagramMasterSetting = null,
                     CalculateComponentCoordinates = false,
-                    CloneMetadata = "Default",
-                    MarkDeletedInsertedContentDeep = false,
+                    CloneMetadata = Settings.CloneMetadataEnum.Default,
                     Password = "1111",
-                    PasswordSaveOption = "User",
+                    PasswordSaveOption = Settings.PasswordSaveOptionEnum.User,
                     DeletedItemsStyle = new ItemsStyle
                     {
                         BeginSeparatorString = "",
@@ -241,7 +239,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
                         Italic = false,
                         StrikeThrough = false
                     },
-                    StyleChangedItemsStyle = new ItemsStyle
+                    ChangedItemsStyle = new ItemsStyle
                     {
                         BeginSeparatorString = "",
                         EndSeparatorString = "",
@@ -263,8 +261,8 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
 
             var changes = new List<ChangeInfo>
             {
-                new ChangeInfo {Id = 0, ComparisonAction = "Accept"},
-                new ChangeInfo {Id = 1, ComparisonAction = "Reject"}
+                new ChangeInfo {Id = 0, ComparisonAction = ChangeInfo.ComparisonActionEnum.Accept},
+                new ChangeInfo {Id = 1, ComparisonAction = ChangeInfo.ComparisonActionEnum.Reject}
             };
             options.Changes = changes.ToList();
 

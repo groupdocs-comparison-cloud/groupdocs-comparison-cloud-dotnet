@@ -8,12 +8,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Image
 {
     public class UpdatesImageTests : BaseApiTest
     {
-        [Test, Ignore("Type casting bug, fixed in Comparison 19.4")]
+        [Test]
         public void UpdatesImage()
         {
-            var options = GetComparisonOptionsUpdates(TestFiles.SourceImage, new List<TestFile>() { TestFiles.TargetImage });
+            var options = GetComparisonOptionsUpdates(TestFiles.SourceImage, new List<TestFile> { TestFiles.TargetImage });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
     }
 }

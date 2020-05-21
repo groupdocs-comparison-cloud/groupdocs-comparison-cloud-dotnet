@@ -1,8 +1,8 @@
-﻿using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
+﻿using System.Collections.Generic;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
 using GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal;
 using NUnit.Framework;
-using System.Collections.Generic;
-using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Image
 {
@@ -11,7 +11,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Image
         [Test]
         public void ChangesImage()
         {
-            var options = GetComparisonOptions(TestFiles.SourceImage, new List<TestFile>() { TestFiles.TargetImage });
+            var options = GetComparisonOptions(TestFiles.SourceImage, new List<TestFile> { TestFiles.TargetImage });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
             Assert.AreEqual(170, response.Count);
         }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ItemsStyle.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,9 +69,14 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public bool? Italic { get; set; }
 
         /// <summary>
-        /// Strikethrough style for changed components
+        /// Strike through style for changed components
         /// </summary>  
         public bool? StrikeThrough { get; set; }
+
+        /// <summary>
+        /// Underline style for changed components
+        /// </summary>  
+        public bool? Underline { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -88,6 +93,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
           sb.Append("  Bold: ").Append(this.Bold).Append("\n");
           sb.Append("  Italic: ").Append(this.Italic).Append("\n");
           sb.Append("  StrikeThrough: ").Append(this.StrikeThrough).Append("\n");
+          sb.Append("  Underline: ").Append(this.Underline).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

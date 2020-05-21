@@ -1,8 +1,8 @@
-﻿using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
+﻿using System.Collections.Generic;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
 using GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal;
 using NUnit.Framework;
-using System.Collections.Generic;
-using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Txt
 {
@@ -11,7 +11,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Txt
         [Test]
         public void ChangesText()
         {
-            var options = GetComparisonOptions(TestFiles.SourceText, new List<TestFile>() { TestFiles.TargetText });
+            var options = GetComparisonOptions(TestFiles.SourceText, new List<TestFile> { TestFiles.TargetText });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
             Assert.AreEqual(6, response.Count);
         }

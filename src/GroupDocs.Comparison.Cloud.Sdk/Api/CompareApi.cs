@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="CompareApi.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -143,10 +143,10 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
         /// <returns><see cref="Link"/></returns>
         public Link PutChangesDocument(PutChangesDocumentRequest request)
         {
-            // verify the required parameter 'comparisonOptions' is set
-            if (request.comparisonOptions == null) 
+            // verify the required parameter 'updatesOptions' is set
+            if (request.updatesOptions == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'comparisonOptions' when calling PutChangesDocument");
+                throw new ApiException(400, "Missing required parameter 'updatesOptions' when calling PutChangesDocument");
             }
 
             // create path and map variables
@@ -155,7 +155,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-            var postBody = SerializationHelper.Serialize(request.comparisonOptions); // http body (model) parameter
+            var postBody = SerializationHelper.Serialize(request.updatesOptions); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                 "PUT", 
@@ -174,7 +174,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
 }
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ComparisonsRequest.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -217,7 +217,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests
           /// Initializes a new instance of the <see cref="ComparisonsRequest"/> class.
           /// </summary>
           /// <param name="comparisonOptions">Comparison options</param>
-          public ComparisonsRequest(Options comparisonOptions)             
+          public ComparisonsRequest(ComparisonOptions comparisonOptions)             
           {
               this.comparisonOptions = comparisonOptions;
           }
@@ -225,12 +225,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests
           /// <summary>
           /// Comparison options
           /// </summary>  
-          public Options comparisonOptions { get; set; }
+          public ComparisonOptions comparisonOptions { get; set; }
     }
 }
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="PostChangesRequest.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -273,7 +273,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests
           /// Initializes a new instance of the <see cref="PostChangesRequest"/> class.
           /// </summary>
           /// <param name="comparisonOptions">Comparison options</param>
-          public PostChangesRequest(Options comparisonOptions)             
+          public PostChangesRequest(ComparisonOptions comparisonOptions)             
           {
               this.comparisonOptions = comparisonOptions;
           }
@@ -281,12 +281,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests
           /// <summary>
           /// Comparison options
           /// </summary>  
-          public Options comparisonOptions { get; set; }
+          public ComparisonOptions comparisonOptions { get; set; }
     }
 }
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="PutChangesDocumentRequest.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -328,15 +328,15 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests
           /// <summary>
           /// Initializes a new instance of the <see cref="PutChangesDocumentRequest"/> class.
           /// </summary>
-          /// <param name="comparisonOptions">Comparison options</param>
-          public PutChangesDocumentRequest(UpdatesOptions comparisonOptions)             
+          /// <param name="updatesOptions">Comparison options</param>
+          public PutChangesDocumentRequest(UpdatesOptions updatesOptions)             
           {
-              this.comparisonOptions = comparisonOptions;
+              this.updatesOptions = updatesOptions;
           }
           
           /// <summary>
           /// Comparison options
           /// </summary>  
-          public UpdatesOptions comparisonOptions { get; set; }
+          public UpdatesOptions updatesOptions { get; set; }
     }
 }

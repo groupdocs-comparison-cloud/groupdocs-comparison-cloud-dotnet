@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="FileInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="PageInfo.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,24 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Describes compared document
+    /// Represents information about page
     /// </summary>  
-    public class FileInfo 
+    public class PageInfo 
     {                       
         /// <summary>
-        /// Path to the compared document
+        /// Page width
         /// </summary>  
-        public string FilePath { get; set; }
+        public int? Width { get; set; }
 
         /// <summary>
-        /// Document version
+        /// Page height
         /// </summary>  
-        public string VersionId { get; set; }
+        public int? Height { get; set; }
 
         /// <summary>
-        /// Storage name 
+        /// Page number
         /// </summary>  
-        public string StorageName { get; set; }
-
-        /// <summary>
-        /// Password for encrypted document
-        /// </summary>  
-        public string Password { get; set; }
+        public int? PageNumber { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +60,10 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FileInfo {\n");
-          sb.Append("  FilePath: ").Append(this.FilePath).Append("\n");
-          sb.Append("  VersionId: ").Append(this.VersionId).Append("\n");
-          sb.Append("  StorageName: ").Append(this.StorageName).Append("\n");
-          sb.Append("  Password: ").Append(this.Password).Append("\n");
+          sb.Append("class PageInfo {\n");
+          sb.Append("  Width: ").Append(this.Width).Append("\n");
+          sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  PageNumber: ").Append(this.PageNumber).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

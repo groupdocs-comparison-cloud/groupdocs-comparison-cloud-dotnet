@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="FileInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="InfoResult.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,29 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Describes compared document
+    /// Represents document information
     /// </summary>  
-    public class FileInfo 
+    public class InfoResult 
     {                       
         /// <summary>
-        /// Path to the compared document
+        /// Document format
         /// </summary>  
-        public string FilePath { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
-        /// Document version
+        /// Document file extension
         /// </summary>  
-        public string VersionId { get; set; }
+        public string Extension { get; set; }
 
         /// <summary>
-        /// Storage name 
+        /// Document file size
         /// </summary>  
-        public string StorageName { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
-        /// Password for encrypted document
+        /// Pages count
         /// </summary>  
-        public string Password { get; set; }
+        public int? PageCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +65,11 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FileInfo {\n");
-          sb.Append("  FilePath: ").Append(this.FilePath).Append("\n");
-          sb.Append("  VersionId: ").Append(this.VersionId).Append("\n");
-          sb.Append("  StorageName: ").Append(this.StorageName).Append("\n");
-          sb.Append("  Password: ").Append(this.Password).Append("\n");
+          sb.Append("class InfoResult {\n");
+          sb.Append("  Format: ").Append(this.Format).Append("\n");
+          sb.Append("  Extension: ").Append(this.Extension).Append("\n");
+          sb.Append("  Size: ").Append(this.Size).Append("\n");
+          sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

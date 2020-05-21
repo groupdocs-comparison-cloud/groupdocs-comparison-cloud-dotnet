@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="UpdatesOptions.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,10 +36,10 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     /// <summary>
     /// Comparison option class for updates endpoint
     /// </summary>  
-    public class UpdatesOptions : Options 
+    public class UpdatesOptions : ComparisonOptions 
     {                       
         /// <summary>
-        /// Changes to apply or reject. Used only for Changes resourse (/comparison/updates)
+        /// Changes to apply or reject. Used only for updates resource (/comparison/updates)
         /// </summary>  
         public List<ChangeInfo> Changes { get; set; }
 

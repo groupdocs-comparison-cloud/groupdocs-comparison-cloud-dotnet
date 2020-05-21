@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="Options.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+// <copyright company="Aspose Pty Ltd" file="Size.cs">
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,29 +34,19 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Defines comparison options
+    /// Item size
     /// </summary>  
-    public class Options 
+    public class Size 
     {                       
         /// <summary>
-        /// Information about source file
+        /// Width of item
         /// </summary>  
-        public FileInfo SourceFile { get; set; }
+        public int? Width { get; set; }
 
         /// <summary>
-        /// Information about target file(s)
+        /// Height of item
         /// </summary>  
-        public List<FileInfo> TargetFiles { get; set; }
-
-        /// <summary>
-        /// Comparison settings
-        /// </summary>  
-        public Settings Settings { get; set; }
-
-        /// <summary>
-        /// Path to the resultant document (if not specified the document will not be saved)
-        /// </summary>  
-        public string OutputPath { get; set; }
+        public int? Height { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +55,9 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class Options {\n");
-          sb.Append("  SourceFile: ").Append(this.SourceFile).Append("\n");
-          sb.Append("  TargetFiles: ").Append(this.TargetFiles).Append("\n");
-          sb.Append("  Settings: ").Append(this.Settings).Append("\n");
-          sb.Append("  OutputPath: ").Append(this.OutputPath).Append("\n");
+          sb.Append("class Size {\n");
+          sb.Append("  Width: ").Append(this.Width).Append("\n");
+          sb.Append("  Height: ").Append(this.Height).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -1,8 +1,8 @@
-﻿using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
+﻿using System.Collections.Generic;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
 using GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal;
 using NUnit.Framework;
-using System.Collections.Generic;
-using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Pdf
 {
@@ -11,7 +11,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Pdf
         [Test]
         public void ChangesPdf()
         {
-            var options = GetComparisonOptions(TestFiles.SourcePdf, new List<TestFile>() { TestFiles.TargetPdf });
+            var options = GetComparisonOptions(TestFiles.SourcePdf, new List<TestFile> { TestFiles.TargetPdf });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
             Assert.AreEqual(3, response.Count);
         }
@@ -19,7 +19,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Pdf
         [Test]
         public void ChangesPdfPasswords()
         {
-            var options = GetComparisonOptions(TestFiles.SourcePdfProtected, new List<TestFile>() { TestFiles.TargetPdfProtected });
+            var options = GetComparisonOptions(TestFiles.SourcePdfProtected, new List<TestFile> { TestFiles.TargetPdfProtected });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
             Assert.AreEqual(3, response.Count);
         }

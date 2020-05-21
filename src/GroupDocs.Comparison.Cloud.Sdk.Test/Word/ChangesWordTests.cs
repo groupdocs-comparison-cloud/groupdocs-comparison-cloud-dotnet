@@ -1,8 +1,8 @@
-﻿using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
+﻿using System.Collections.Generic;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
 using GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal;
 using NUnit.Framework;
-using System.Collections.Generic;
-using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
 {
@@ -11,7 +11,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         [Test]
         public void ChangesWord()
         {
-            var options = GetComparisonOptions(TestFiles.SourceWord, new List<TestFile>() { TestFiles.TargetWord });
+            var options = GetComparisonOptions(TestFiles.SourceWord, new List<TestFile> { TestFiles.TargetWord });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
             Assert.AreEqual(40, response.Count);
         }
@@ -19,7 +19,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         [Test]
         public void ChangesWordPasswords()
         {
-            var options = GetComparisonOptions(TestFiles.SourceWordProtected, new List<TestFile>() { TestFiles.TargetWordProtected });
+            var options = GetComparisonOptions(TestFiles.SourceWordProtected, new List<TestFile> { TestFiles.TargetWordProtected });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
             Assert.AreEqual(14, response.Count);
         }
@@ -28,7 +28,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         public void ChangesWordMulti()
         {
             var options = GetComparisonOptions(TestFiles.SourceWord,
-                new List<TestFile>()
+                new List<TestFile>
                 {
                     TestFiles.TargetWord,
                     TestFiles.TargetWord1,
@@ -42,7 +42,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         public void ChangesWordMultiPassword()
         {
             var options = GetComparisonOptions(TestFiles.SourceWordProtected,
-                new List<TestFile>()
+                new List<TestFile>
                 {
                     TestFiles.TargetWordProtected,
                     TestFiles.TargetWord1Protected,

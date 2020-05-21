@@ -1,8 +1,8 @@
-﻿using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
+﻿using System.Collections.Generic;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
 using GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal;
 using NUnit.Framework;
-using System.Collections.Generic;
-using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
 {
@@ -11,45 +11,45 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         [Test]
         public void ComparisonsWord()
         {
-            var options = GetComparisonOptions(TestFiles.SourceWord, new List<TestFile>() { TestFiles.TargetWord });
+            var options = GetComparisonOptions(TestFiles.SourceWord, new List<TestFile> { TestFiles.TargetWord });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
         [Test]
         public void ComparisonsWordPasswords()
         {
-            var options = GetComparisonOptions(TestFiles.SourceWordProtected, new List<TestFile>() { TestFiles.TargetWordProtected });
+            var options = GetComparisonOptions(TestFiles.SourceWordProtected, new List<TestFile> { TestFiles.TargetWordProtected });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
         [Test]
         public void ComparisonsWordMulti()
         {
             var options = GetComparisonOptions(TestFiles.SourceWord,
-                new List<TestFile>()
+                new List<TestFile>
                 {
                     TestFiles.TargetWord,
                     TestFiles.TargetWord1,
                     TestFiles.TargetWord2
                 });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
         [Test]
         public void ComparisonsWordMultiPassword()
         {
             var options = GetComparisonOptions(TestFiles.SourceWordProtected,
-                new List<TestFile>()
+                new List<TestFile>
                 {
                     TestFiles.TargetWordProtected,
                     TestFiles.TargetWord1Protected,
                     TestFiles.TargetWord2Protected
                 });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
     }
 }

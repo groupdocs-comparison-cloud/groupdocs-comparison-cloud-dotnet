@@ -13,15 +13,15 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Cell
         {
             var options = GetComparisonOptions(TestFiles.SourceCell, new List<TestFile> { TestFiles.TargetCell });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
-        [Test, Ignore("Fixed in Comparison 19.4")]
+        [Test]
         public void ComparisonsCellPasswords()
         {
             var options = GetComparisonOptions(TestFiles.SourceCellProtected, new List<TestFile> { TestFiles.TargetCellProtected });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
     }
 }

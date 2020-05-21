@@ -13,7 +13,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Diagram
         {
             var options = GetComparisonOptions(TestFiles.SourceDiagram, new List<TestFile>() { TestFiles.TargetDiagram });
             var response = CompareApi.Comparisons(new ComparisonsRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
     }
 }

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="ChangeInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="ComparisonOptions.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,39 +34,16 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// ChangeInfo Object fields
+    /// Defines comparison options
     /// </summary>  
-    public class ChangeInfo 
+    public class ComparisonOptions 
     {                       
         /// <summary>
-        /// Action (accept or reject). This field shows comparison what to do with this change
+        /// Changes type. Used only for Changes resource(/comparison/changes)
         /// </summary>
-        /// <value>Action (accept or reject). This field shows comparison what to do with this change</value>
+        /// <value>Changes type. Used only for Changes resource(/comparison/changes)</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum ComparisonActionEnum
-        { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
-            /// <summary>
-            /// Enum Accept for "Accept"
-            /// </summary>            
-            Accept,
-            
-            /// <summary>
-            /// Enum Reject for "Reject"
-            /// </summary>            
-            Reject            
-        }
-
-        /// <summary>
-        /// Type of change (Inserted, Deleted or StyleChanged)
-        /// </summary>
-        /// <value>Type of change (Inserted, Deleted or StyleChanged)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
+        public enum ChangeTypeEnum
         { 
             /// <summary>
             /// Enum None for "None"
@@ -125,49 +102,29 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Action (accept or reject). This field shows comparison what to do with this change
+        /// Changes type. Used only for Changes resource(/comparison/changes)
         /// </summary>
-        public ComparisonActionEnum? ComparisonAction { get; set; }
+        public ChangeTypeEnum? ChangeType { get; set; }
 
         /// <summary>
-        /// Type of change (Inserted, Deleted or StyleChanged)
-        /// </summary>
-        public TypeEnum? Type { get; set; }
-
-        /// <summary>
-        /// Id of change
+        /// Information about source file
         /// </summary>  
-        public int? Id { get; set; }
+        public FileInfo SourceFile { get; set; }
 
         /// <summary>
-        /// Text of changed element
+        /// Information about target file(s)
         /// </summary>  
-        public string Text { get; set; }
+        public List<FileInfo> TargetFiles { get; set; }
 
         /// <summary>
-        /// Changed text of target doc
+        /// Comparison settings
         /// </summary>  
-        public string TargetText { get; set; }
+        public Settings Settings { get; set; }
 
         /// <summary>
-        /// Array of authors who made this change (used for multi comparison)
+        /// Path to the resultant document (if not specified the document will not be saved)
         /// </summary>  
-        public List<string> Authors { get; set; }
-
-        /// <summary>
-        /// Array of style changes
-        /// </summary>  
-        public List<StyleChangeInfo> StyleChangeInfo { get; set; }
-
-        /// <summary>
-        /// Page where current change is placed
-        /// </summary>  
-        public PageInfo PageInfo { get; set; }
-
-        /// <summary>
-        /// Coordinates of changed element
-        /// </summary>  
-        public Rectangle Box { get; set; }
+        public string OutputPath { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -176,16 +133,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class ChangeInfo {\n");
-          sb.Append("  Id: ").Append(this.Id).Append("\n");
-          sb.Append("  ComparisonAction: ").Append(this.ComparisonAction).Append("\n");
-          sb.Append("  Type: ").Append(this.Type).Append("\n");
-          sb.Append("  Text: ").Append(this.Text).Append("\n");
-          sb.Append("  TargetText: ").Append(this.TargetText).Append("\n");
-          sb.Append("  Authors: ").Append(this.Authors).Append("\n");
-          sb.Append("  StyleChangeInfo: ").Append(this.StyleChangeInfo).Append("\n");
-          sb.Append("  PageInfo: ").Append(this.PageInfo).Append("\n");
-          sb.Append("  Box: ").Append(this.Box).Append("\n");
+          sb.Append("class ComparisonOptions {\n");
+          sb.Append("  SourceFile: ").Append(this.SourceFile).Append("\n");
+          sb.Append("  TargetFiles: ").Append(this.TargetFiles).Append("\n");
+          sb.Append("  Settings: ").Append(this.Settings).Append("\n");
+          sb.Append("  ChangeType: ").Append(this.ChangeType).Append("\n");
+          sb.Append("  OutputPath: ").Append(this.OutputPath).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

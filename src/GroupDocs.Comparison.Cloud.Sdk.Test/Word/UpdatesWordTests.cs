@@ -13,7 +13,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         {
             var options = GetComparisonOptionsUpdates(TestFiles.SourceWord, new List<TestFile>() { TestFiles.TargetWord });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
         [Test]
@@ -21,7 +21,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
         {
             var options = GetComparisonOptionsUpdates(TestFiles.SourceWordProtected, new List<TestFile>() { TestFiles.TargetWordProtected });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
                     TestFiles.TargetWord2
                 });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Word
                     TestFiles.TargetWord2Protected
                 });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
     }
 }

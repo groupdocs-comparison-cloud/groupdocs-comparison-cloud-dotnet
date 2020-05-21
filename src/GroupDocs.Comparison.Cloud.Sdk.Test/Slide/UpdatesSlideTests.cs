@@ -1,8 +1,8 @@
-﻿using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
+﻿using System.Collections.Generic;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using GroupDocs.Comparison.Cloud.Sdk.Test.Api;
 using GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal;
 using NUnit.Framework;
-using System.Collections.Generic;
-using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Slide
 {
@@ -11,38 +11,38 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Slide
         [Test]
         public void UpdatesSlide()
         {
-            var options = GetComparisonOptionsUpdates(TestFiles.SourceSlide, new List<TestFile>() { TestFiles.TargetSlide });
+            var options = GetComparisonOptionsUpdates(TestFiles.SourceSlide, new List<TestFile> { TestFiles.TargetSlide });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
-        [Test, Ignore("Fixed in Comparison 19.4")]
+        [Test]
         public void UpdatesSlidePasswords()
         {
-            var options = GetComparisonOptionsUpdates(TestFiles.SourceSlideProtected,new List<TestFile>() { TestFiles.TargetSlideProtected });
+            var options = GetComparisonOptionsUpdates(TestFiles.SourceSlideProtected,new List<TestFile> { TestFiles.TargetSlideProtected });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
-        [Test, Ignore("Fixed in Comparison 19.4")]
+        [Test]
         public void UpdatesSlideMulti()
         {
             var options = GetComparisonOptionsUpdates(TestFiles.SourceSlide,
-                new List<TestFile>()
+                new List<TestFile>
                 {
                     TestFiles.TargetSlide,
                     TestFiles.TargetSlide1,
                     TestFiles.TargetSlide2
                 });
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
 
-        [Test, Ignore("Fixed in Comparison 19.4")]
+        [Test]
         public void UpdatesSlideMultiPassword()
         {
             var options = GetComparisonOptionsUpdates(TestFiles.SourceSlideProtected,
-                new List<TestFile>()
+                new List<TestFile>
                 {
                     TestFiles.TargetSlideProtected,
                     TestFiles.TargetSlide1Protected,
@@ -50,7 +50,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Slide
                 });
 
             var response = CompareApi.PutChangesDocument(new PutChangesDocumentRequest(options));
-            Assert.AreEqual(response.Href, options.OutputPath);
+            Assert.AreEqual(response.Rel, options.OutputPath);
         }
     }
 }

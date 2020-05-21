@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="DiagramMasterSetting.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,16 +49,6 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public bool? UseSourceMaster { get; set; }
 
         /// <summary>
-        /// Width of original document
-        /// </summary>  
-        public int? Width { get; set; }
-
-        /// <summary>
-        /// Height of original document
-        /// </summary>  
-        public int? Height { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -68,8 +58,6 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
           sb.Append("class DiagramMasterSetting {\n");
           sb.Append("  MasterPath: ").Append(this.MasterPath).Append("\n");
           sb.Append("  UseSourceMaster: ").Append(this.UseSourceMaster).Append("\n");
-          sb.Append("  Width: ").Append(this.Width).Append("\n");
-          sb.Append("  Height: ").Append(this.Height).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

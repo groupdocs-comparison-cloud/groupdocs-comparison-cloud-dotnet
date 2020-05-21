@@ -16,12 +16,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Cell
             Assert.AreEqual(36, response.Count);
         }
 
-        [Test, Ignore("Fixed in Comparison 19.4")]
+        [Test]
         public void ChangesCellPasswords()
         {
             var options = GetComparisonOptions(TestFiles.SourceCellProtected, new List<TestFile> { TestFiles.TargetCellProtected });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
-            Assert.AreEqual(14, response.Count);
+            Assert.AreEqual(6, response.Count);
         }
     }
 }
