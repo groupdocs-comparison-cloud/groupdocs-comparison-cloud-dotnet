@@ -21,7 +21,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Cell
         {
             var options = GetComparisonOptions(TestFiles.SourceCellProtected, new List<TestFile> { TestFiles.TargetCellProtected });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
-            Assert.AreEqual(6, response.Count);
+            Assert.AreEqual(5, response.Count);
         }
     }
 }
