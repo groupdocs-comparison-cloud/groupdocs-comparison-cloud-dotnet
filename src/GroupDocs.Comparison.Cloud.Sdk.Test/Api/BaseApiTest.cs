@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd">
-//  Copyright (c) 2003-2020 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,6 +47,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
         private readonly string _apiBaseUrl = Config.ApiBaseUrl;
 
         protected CompareApi CompareApi;
+        protected ReviewApi ReviewApi;
         protected InfoApi InfoApi;
         protected FileApi FileApi;
         protected FolderApi FolderApi;
@@ -61,6 +62,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
             };
 
             CompareApi = new CompareApi(config);
+            ReviewApi = new ReviewApi(config);
             InfoApi = new InfoApi(config);
             FileApi = new FileApi(config);
             FolderApi = new FolderApi(config);

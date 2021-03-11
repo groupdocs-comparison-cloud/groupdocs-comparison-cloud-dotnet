@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ApplyRevisionsOptions.cs">
-//  Copyright (c) 2003-2020 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,6 +49,16 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public List<RevisionInfo> Revisions { get; set; }
 
         /// <summary>
+        /// Indicates whether to apply all revisions in the document
+        /// </summary>  
+        public bool? AcceptAll { get; set; }
+
+        /// <summary>
+        /// Indicates whether to reject all revisions in the document
+        /// </summary>  
+        public bool? RejectAll { get; set; }
+
+        /// <summary>
         /// Path to the resultant document (if not specified the document will not be saved)
         /// </summary>  
         public string OutputPath { get; set; }
@@ -63,6 +73,8 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
           sb.Append("class ApplyRevisionsOptions {\n");
           sb.Append("  SourceFile: ").Append(this.SourceFile).Append("\n");
           sb.Append("  Revisions: ").Append(this.Revisions).Append("\n");
+          sb.Append("  AcceptAll: ").Append(this.AcceptAll).Append("\n");
+          sb.Append("  RejectAll: ").Append(this.RejectAll).Append("\n");
           sb.Append("  OutputPath: ").Append(this.OutputPath).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

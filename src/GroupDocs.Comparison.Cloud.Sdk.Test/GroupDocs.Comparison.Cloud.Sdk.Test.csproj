@@ -49,39 +49,40 @@
     <Compile Include="Api\FolderApiTests.cs" />
     <Compile Include="Api\Internal\TestFile.cs" />
     <Compile Include="Api\Internal\TestFiles.cs" />
+    <Compile Include="Api\ReviewApiTests\RevisionsTests.cs" />
     <Compile Include="Api\StorageApiTests.cs" />
-    <Compile Include="Cell\ChangesCellTests.cs" />
-    <Compile Include="Cell\ComparisonsCellTests.cs" />
-    <Compile Include="Cell\UpdatesCellTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Cell\ChangesCellTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Cell\ComparisonsCellTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Cell\UpdatesCellTests.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="Diagram\ChangesDiagramTests.cs" />
-    <Compile Include="Diagram\ComparisonsDiagramTests.cs" />
-    <Compile Include="Diagram\UpdatesDiagramTests.cs" />
-    <Compile Include="Email\ChangesEmailTests.cs" />
-    <Compile Include="Email\ComparisonsEmailTests.cs" />
-    <Compile Include="Email\UpdatesEmailTests.cs" />
-    <Compile Include="Html\ChangesHtmlTests.cs" />
-    <Compile Include="Html\ComparisonsHtmlTests.cs" />
-    <Compile Include="Html\UpdatesHtmlTests.cs" />
-    <Compile Include="Image\ChangesImageTests.cs" />
-    <Compile Include="Image\ComparisonsImageTests.cs" />
-    <Compile Include="Image\UpdatesImageTests.cs" />
-    <Compile Include="Note\ChangesNoteTests.cs" />
-    <Compile Include="Note\ComparisonsNoteTests.cs" />
-    <Compile Include="Note\UpdatesNoteTests.cs" />
-    <Compile Include="Pdf\ChangesPdfTests.cs" />
-    <Compile Include="Pdf\ComparisonsPdfTests.cs" />
-    <Compile Include="Pdf\UpdatesPdfTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Diagram\ChangesDiagramTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Diagram\ComparisonsDiagramTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Diagram\UpdatesDiagramTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Email\ChangesEmailTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Email\ComparisonsEmailTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Email\UpdatesEmailTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Html\ChangesHtmlTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Html\ComparisonsHtmlTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Html\UpdatesHtmlTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Image\ChangesImageTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Image\ComparisonsImageTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Image\UpdatesImageTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Note\ChangesNoteTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Note\ComparisonsNoteTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Note\UpdatesNoteTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Pdf\ChangesPdfTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Pdf\ComparisonsPdfTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Pdf\UpdatesPdfTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Slide\ChangesSlideTests.cs" />
-    <Compile Include="Slide\ComparisonsSlideTests.cs" />
-    <Compile Include="Slide\UpdatesSlideTests.cs" />
-    <Compile Include="Txt\ChangesTxtTests.cs" />
-    <Compile Include="Txt\ComparisonsTxtTests.cs" />
-    <Compile Include="Txt\UpdatesTxtTests.cs" />
-    <Compile Include="Word\ChangesWordTests.cs" />
-    <Compile Include="Word\ComparisonsWordTests.cs" />
-    <Compile Include="Word\UpdatesWordTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Slide\ChangesSlideTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Slide\ComparisonsSlideTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Slide\UpdatesSlideTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Txt\ChangesTxtTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Txt\ComparisonsTxtTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Txt\UpdatesTxtTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Word\ChangesWordTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Word\ComparisonsWordTests.cs" />
+    <Compile Include="Api\ComparisonApiTests\Word\UpdatesWordTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
@@ -213,5 +214,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

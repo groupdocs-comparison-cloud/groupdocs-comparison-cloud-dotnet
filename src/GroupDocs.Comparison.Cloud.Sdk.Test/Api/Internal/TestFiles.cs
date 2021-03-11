@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd">
-//  Copyright (c) 2003-2020 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,6 +42,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal
         public static readonly TestFile SourceSlide = new TestFile("source.pptx", "source_files\\slide\\");
         public static readonly TestFile SourceText = new TestFile("source.txt", "source_files\\text\\");
         public static readonly TestFile SourceWord = new TestFile("source.docx", "source_files\\word\\");
+        public static readonly TestFile SourceWithRevs = new TestFile("source_with_revs.docx", "source_files\\word\\");
         #endregion
 
         #region Protected files
@@ -104,6 +105,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api.Internal
                 yield return SourceSlide;
                 yield return SourceText;
                 yield return SourceWord;
+                yield return SourceWithRevs;
                 yield return SourceCellProtected;
                 yield return SourceNoteProtected;
                 yield return SourcePdfProtected;
