@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Api\AuthApiTests.cs" />
     <Compile Include="Api\BaseApiTest.cs" />
+    <Compile Include="Api\InfoApiTests.cs" />
     <Compile Include="Api\FileApiTests.cs" />
     <Compile Include="Api\FolderApiTests.cs" />
     <Compile Include="Api\Internal\TestFile.cs" />
