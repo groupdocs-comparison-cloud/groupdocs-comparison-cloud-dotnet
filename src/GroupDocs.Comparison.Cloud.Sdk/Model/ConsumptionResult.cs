@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="DiagramMasterSetting.cs">
+// <copyright company="Aspose Pty Ltd" file="ConsumptionResult.cs">
 //  Copyright (c) 2003-2022 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,19 +34,19 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// DiagramMasterSetting Object fields
+    /// Metered license consumption information
     /// </summary>  
-    public class DiagramMasterSetting 
+    public class ConsumptionResult 
     {                       
         /// <summary>
-        /// Path to custom master path
+        /// Amount of used credits
         /// </summary>  
-        public string MasterPath { get; set; }
+        public decimal? Credit { get; set; }
 
         /// <summary>
-        /// Value of using master from source and target document together
+        /// Amount of MBs processed
         /// </summary>  
-        public bool? UseSourceMaster { get; set; }
+        public decimal? Quantity { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -55,9 +55,9 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DiagramMasterSetting {\n");
-          sb.Append("  MasterPath: ").Append(this.MasterPath).Append("\n");
-          sb.Append("  UseSourceMaster: ").Append(this.UseSourceMaster).Append("\n");
+          sb.Append("class ConsumptionResult {\n");
+          sb.Append("  Credit: ").Append(this.Credit).Append("\n");
+          sb.Append("  Quantity: ").Append(this.Quantity).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
