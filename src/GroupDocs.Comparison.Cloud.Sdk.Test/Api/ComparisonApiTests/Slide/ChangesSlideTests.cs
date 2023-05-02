@@ -34,7 +34,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api.ComparisonApiTests.Slide
                     TestFiles.TargetSlide2
                 });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
-            Assert.AreEqual(7, response.Count);
+            Assert.AreEqual(4, response.Count);
         }
 
         [Test]

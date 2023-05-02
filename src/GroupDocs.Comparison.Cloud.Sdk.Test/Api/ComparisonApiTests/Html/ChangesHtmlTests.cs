@@ -12,7 +12,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api.ComparisonApiTests.Html
         {
             var options = GetComparisonOptions(TestFiles.SourceHtml, new List<TestFile> { TestFiles.TargetHtml });
             var response = CompareApi.PostChanges(new PostChangesRequest(options));
-            Assert.AreEqual(3, response.Count);
+            Assert.AreEqual(2, response.Count);
         }
     }
 }

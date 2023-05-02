@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ApiExceptionRequestHandler.cs">
-//  Copyright (c) 2003-2022 Aspose Pty Ltd
+//  Copyright (c) 2003-2023 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -81,6 +81,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Client.RequestHandlers
                         .Deserialize(responseData, typeof(AuthErrorResponse)) is AuthErrorResponse authErrorResponse && authErrorResponse.ErrorMessage != null)
                     {
                         throw new ApiException(statusCode, authErrorResponse.ErrorMessage);
+                    }
+
+                    if (SerializationHelper
+                        .Deserialize(responseData, typeof(ApiErrorResponse)) is ApiErrorResponse apiErrorResponse && apiErrorResponse.Error?.Message != null)
+                    {
+                        throw new ApiException(statusCode, apiErrorResponse.Error.Message);
                     }
 
                     if (SerializationHelper
