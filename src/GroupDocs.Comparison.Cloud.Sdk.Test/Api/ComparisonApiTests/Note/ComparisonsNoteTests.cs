@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api.ComparisonApiTests.Note
 {
+    [Ignore("Not supported in linux")]
     public class ComparisonsNoteTests : BaseApiTest
     {
         [Test]

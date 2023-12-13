@@ -24,6 +24,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api.ComparisonApiTests.Slide
         }
 
         [Test]
+        [Ignore("Not supported in linux")]
         public void UpdatesSlideMulti()
         {
             var options = GetComparisonOptionsUpdates(TestFiles.SourceSlide,
