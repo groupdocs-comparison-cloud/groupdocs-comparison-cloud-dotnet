@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="FilesList.cs">
+// <copyright company="Aspose Pty Ltd" file="PreviewOptions.cs">
 //  Copyright (c) Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,14 +34,62 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Files list
+    /// Defines preview options
     /// </summary>  
-    public class FilesList 
+    public class PreviewOptions 
     {                       
         /// <summary>
-        /// Files and folders contained by folder StorageFile.
+        /// Preview image format
+        /// </summary>
+        /// <value>Preview image format</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum FormatEnum
+        { 
+            /// <summary>
+            /// Enum Jpeg for "Jpeg"
+            /// </summary>            
+            Jpeg,
+            
+            /// <summary>
+            /// Enum Png for "Png"
+            /// </summary>            
+            Png,
+            
+            /// <summary>
+            /// Enum Bmp for "Bmp"
+            /// </summary>            
+            Bmp            
+        }
+
+        /// <summary>
+        /// Preview image format
+        /// </summary>
+        public FormatEnum? Format { get; set; }
+
+        /// <summary>
+        /// Input file info
         /// </summary>  
-        public List<StorageFile> Value { get; set; }
+        public FileInfo FileInfo { get; set; }
+
+        /// <summary>
+        /// Path to folder with preview results
+        /// </summary>  
+        public string OutputFolder { get; set; }
+
+        /// <summary>
+        /// Preview width
+        /// </summary>  
+        public int? Width { get; set; }
+
+        /// <summary>
+        /// Preview height
+        /// </summary>  
+        public int? Height { get; set; }
+
+        /// <summary>
+        /// Page numbers that will be previewed.
+        /// </summary>  
+        public List<int?> PageNumbers { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +98,13 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FilesList {\n");
-          sb.Append("  Value: ").Append(this.Value).Append("\n");
+          sb.Append("class PreviewOptions {\n");
+          sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
+          sb.Append("  Format: ").Append(this.Format).Append("\n");
+          sb.Append("  OutputFolder: ").Append(this.OutputFolder).Append("\n");
+          sb.Append("  Width: ").Append(this.Width).Append("\n");
+          sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  PageNumbers: ").Append(this.PageNumbers).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
