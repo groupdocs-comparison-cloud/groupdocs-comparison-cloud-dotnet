@@ -69,7 +69,7 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
             var ex = Assert.Throws<ApiException>(() => {
                 InfoApi.GetDocumentInfo(request);
             });
-            Assert.AreEqual("Can't find file located at 'some-folder\\NotExist.docx'.", ex.Message);
+            Assert.AreEqual("Can't find file located at 'some-folder/NotExist.docx'.", ex.Message);
         }
 
         [Test]

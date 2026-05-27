@@ -27,7 +27,6 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
 {
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
-    using System.IO;
     using GroupDocs.Comparison.Cloud.Sdk.Client;
     using GroupDocs.Comparison.Cloud.Sdk.Client.RequestHandlers;
     using GroupDocs.Comparison.Cloud.Sdk.Model;
@@ -127,6 +126,68 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Api
                 postBody, 
                 null, 
                 null);
+
+            if (response != null)
+            {
+                return (List<ChangeInfo>)SerializationHelper.Deserialize(response, typeof(List<ChangeInfo>));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Retrieves a list of changes between source and target documents supplied directly in the request body as multipart/form-data.
+        /// </summary>
+        /// <param name="request">Request. <see cref="PutChangesRequest" /></param>
+        /// <returns><see cref="List<ChangeInfo>"/></returns>
+        public List<ChangeInfo> PutChanges(PutChangesRequest request)
+        {
+            // verify required parameters
+            if (request.sourceFile == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'sourceFile' when calling PutChanges");
+            }
+            if (request.targetFiles == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'targetFiles' when calling PutChanges");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetServerUrl() + "/comparison/changes";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            // append optional query parameters to URL
+            var querySeparator = "?";
+            if (!string.IsNullOrEmpty(request.settings))
+            {
+                resourcePath += querySeparator + "settings=" + request.settings;
+                querySeparator = "&";
+            }
+            if (!string.IsNullOrEmpty(request.changeType))
+            {
+                resourcePath += querySeparator + "changeType=" + request.changeType;
+            }
+
+            // file parameters
+            var formParams = new Dictionary<string, object>();
+            using (var sourceStream = request.sourceFile.OpenRead())
+            {
+                formParams.Add("sourceFile", this.apiInvoker.ToFileInfo(sourceStream, request.sourceFile.Name));
+            }
+            using (var targetStream = request.targetFiles.OpenRead())
+            {
+                formParams.Add("targetFiles", this.apiInvoker.ToFileInfo(targetStream, request.targetFiles.Name));
+            }
+
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath,
+                "PUT",
+                null,
+                null,
+                formParams);
 
             if (response != null)
             {
@@ -338,5 +399,82 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests
           /// Comparison options
           /// </summary>  
           public UpdatesOptions updatesOptions { get; set; }
+    }
+}
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose Pty Ltd" file="PutChangesRequest.cs">
+//  Copyright (c) Aspose Pty Ltd
+// </copyright>
+// <summary>
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+// 
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+// 
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace GroupDocs.Comparison.Cloud.Sdk.Model.Requests 
+{
+    using System.IO;
+
+    /// <summary>
+    /// Request model for <see cref="GroupDocs.Comparison.Cloud.Sdk.Api.CompareApi.PutChanges" /> operation.
+    /// </summary>  
+    public class PutChangesRequest  
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutChangesRequest"/> class.
+        /// </summary>
+        public PutChangesRequest()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutChangesRequest"/> class.
+        /// </summary>
+        /// <param name="sourceFile">Source document file</param>
+        /// <param name="targetFiles">Target document file(s)</param>
+        /// <param name="settings">Comparison settings serialized as JSON (optional)</param>
+        /// <param name="changeType">Change type filter (optional)</param>
+        public PutChangesRequest(FileInfo sourceFile, FileInfo targetFiles, string settings = null, string changeType = null)
+        {
+            this.sourceFile = sourceFile;
+            this.targetFiles = targetFiles;
+            this.settings = settings;
+            this.changeType = changeType;
+        }
+
+        /// <summary>
+        /// Source document
+        /// </summary>
+        public FileInfo sourceFile { get; set; }
+
+        /// <summary>
+        /// One or more target document files (required)
+        /// </summary>
+        public FileInfo targetFiles { get; set; }
+
+        /// <summary>
+        /// Comparison settings serialized as JSON (optional)
+        /// </summary>
+        public string settings { get; set; }
+
+        /// <summary>
+        /// Change type filter, e.g. Inserted (optional, defaults to all changes)
+        /// </summary>
+        public string changeType { get; set; }
     }
 }

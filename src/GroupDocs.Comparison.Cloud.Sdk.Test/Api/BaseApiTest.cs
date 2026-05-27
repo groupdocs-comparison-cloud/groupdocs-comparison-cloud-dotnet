@@ -118,6 +118,12 @@ namespace GroupDocs.Comparison.Cloud.Sdk.Test.Api
             return new MemoryStream(bytes);
         }
 
+        protected System.IO.FileInfo GetTestFileInfo(TestFile file)
+        {
+            var filePath = Path.Combine(GetTestDataPath(), file.Folder, file.FileName);
+            return new System.IO.FileInfo(filePath);
+        }
+
         protected Stream SerializeObject(object obj)
         {
             var options = new JsonSerializerSettings
